@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!--This line is a comment, meaning that its contents aren't processed by the browser as actual HTML markup. Comments start with '<!--' and end with -->
+
+<!--The following line is the beginning of the HTML document. Notice that <html> itself has an opening and closing tag, just like any other element!
+
+Here, lang is an attribute specifying the language, which in our case is English.-->
+<html lang="en">
+
+
+    <!-- All elements contained within the <head></head> tags is NOT displayed on the page, only information in the <body> is. 
+
+    The head is used for setting additional information about the document, such as the character encoding used ("UTF-8"), and 
+    (as we'll see later) is a great place to link in CSS stylesheets, fonts, etc. -->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	
+    <!-- Title of the page when displayed in a browser tab, sent as a link, etc.-->
+    <title> Envision W1 </title>
+    
+</head>
+
+
+<body>
+    
+    <p style ="font-family:Helvetica; font-weight=200">Hey Envision pals! We put together this document as a way for you to take a closer look at a lot of the HTML elements and principles we covered in class, and see how they behave in a real document. We think you'll learn best from this if you open it up in Brackets with the live preview window, so that you can see how the HTML markup translates to what is displayed on the page. This should help clear up any ambiguities or uncertainties as you keep working on your webpage projects.<br/>
+    <br/>
+    Make sure you read the comments in the HTML doc for further clairifaction, and please let us know if you have any questions about this doc, or anything else that's not covered here!</p>
+    
+    <!-- The body! This is where we can create HTML elements and have them actually show up. --> 
+    
+    <!-- Let's see how the default header elements look.--> 
+    <h1>Top-level header</h1>
+    <h2>Second-level header</h2>
+    <h3>Third-level header</h3>
+    <h4>Fourth-level header</h4>
+    <h5>Fifth-level header</h5>
+    <h6>Sixth-level header</h6>
+    <!-- In week 2, we'll learn to customize the above with CSS.--> 
+    
+
+    As you'll see here, pure text can be entered as an element, without being needing to be contained in any element other than the body. You can use the tags discussed in class, such as <strong>strong for bolding,</strong> or <em>em for italics</em>.
+    
+    As you'll see, though, entering a line break in this document does NOT result in a corresponding line break in the HTML! All the text just strings together, which is a bit unfortunate for those of us who're interested in making readable, well-separated text. 
+    
+    <h2>So, how do we effectively separate our text?</h2>
+    
+    <h3>1: Using paragraphs</h3>
+    
+    <p>One strategy is to use paragrpahs, the p tag. As we discussed, paragraphs are a BLOCK LEVEL ELEMENT, which means that each paragaph will start its own new line and take up the full width of its container.</p>
+    
+    <p>As such, when I start a new paragraph, you can see that the text is nicely separated from the paragraph before it.</p>
+    
+    <p>I can do this as many times as I like, and it will continue to be separated!</p>
+    
+    
+    <h3>2: Using divs</h3>
+    
+
+    <div>Divs, like paragraphs, are block level elements, but are more general. While a paragraph can (mostly) only hold text, divs can contain lots of things: text, headers, SVG shapes, paragraphs, images, other divs, etc.</div>
+    
+    <div>Since they're also block level elements, though, they can be used to separate text!</div>
+    
+    <div>The main difference you'll notice is that they lack the visually appealing padding between each that the paragraphs have.</div>
+    
+    <div>While we can configure that (and add it to our divs) using CSS properties to make them function more like paragraphs, it's a much better practice to use paragraphs to contain and separate your text, and use <strong>divs</strong> to structure and organize the various content on your page.</div>
+    
+    <h3>3: Using line breaks (less recommended)</h3>
+    Additionally, you can use the break tag to separate lines without wrapping the text in anything, giving a similar look to the spacing of organizing with divs. 
+    
+    <br/>
+    
+    Notice that br is a <strong>self-closing tag:</strong> it doesn't need an opener and closer, just the single tag. 
+    
+    <br/>
+    
+    <h2>On attributes:
+    </h2>
+    
+    As we discussed in class, attributes are ways to configure additional details about an HTML element. 
+    
+    <a>For example, this line is an a (anchor/link) tag with NO attributes.</a><br/>
+    
+    The browser doesn't give it an underline or link stylization, and clicking it doesn't do anything. <strong> This is because the browser has no idea where it's supposed to link to!</strong>
+    
+    <br/>
+    
+    <a href="https://www.google.com">In contrast, this line has the attribute href="https://www.google.com."</a> Now it is stylized as a link, and functions like one too. Click it and check it out!
+    
+    <p>A similar effect can be shown with images.</p>
+    <p>Below this line is an image tag with NO attributes specified.</p>
+    <img/>
+    <p>I promise, it's up there! you just can't see it, because the browser <strong>doesn't know where to look to find the image!</strong>
+    </p>
+    <p>We can fix this through specifying the "src" attribute, and pointing it towards an image of a cat lawyer. That is shown below. </p>
+    
+    <img src="https://cdn.cnn.com/cnnnext/dam/assets/210210145122-cat-lawyer-video---screenshot-super-tease.jpg">
+    
+    <br/>
+    
+    <p>However, that image is displayed in its default size, which is a bit big and overbearing for our purposes, so we can shrink it down a bit using the "width" and "height" attributes. <strong>Attributes are specified within an opening tag, one after the other, separated by spaces, NOT commas. See the HTML below.</strong></p>
+    
+    <img src="https://cdn.cnn.com/cnnnext/dam/assets/210210145122-cat-lawyer-video---screenshot-super-tease.jpg" width = 350 height=200>
+    
+    <br/><br/>
+    
+    <p>And finally, we can stack on yet ANOTHER attribute, "alt", to determine the text to be displayed by browser accessibility settings and / or if the image isn't able to be displayed because the link breaks. Below is what it looks like to <em>not</em> specify this alt :</p>
+    <img src = "notarealwebsite.site" width = 400 height = 250>
+    
+    <p>And if we do?</p>
+    <img src = "notarealwebsite.site" width = 400 height = 250 alt = "A lawyer with a cringey cat filter">
+
+</body>
+</html>
