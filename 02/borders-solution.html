@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+	<meta charset="utf-8">
+	<title>Borders practice</title>
+	<meta name="author" content="Your Name">
+	<meta name="description" content="Example description">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="">
+	<link rel="icon" type="image/x-icon" href=""/>
+    <style>
+     
+    
+    /* Since ALL the divs mentioned use Helvetica as font, we can use the 
+    element-level selector to select the ENTIRE body, and apply the font-family:Helvetica property to all elements inside it. */
+    body {
+        /*We specify two fallbacks for if Helvetica isn't available*/
+        font-family:Helvetica, Arial, sans-serif;
+         }
+
+    /* OPTIONAL / COSMETIC!
+
+    Using element-wise selector to apply this to all divs.
+
+    This will provide some space around all sides of the divs, just to space 'em out a little bit so that we can see the borders more clearly. I know you don't know this yet! We'll learn about it in lab W2.
+    */
+    div {
+        margin:20px;
+        }
+
+
+    /*First div: We access the three sides we're styling separately, and use the shortcut notation (width, style, color) for each. */
+    .first {
+        border-top:3px solid purple;
+        border-bottom:3px solid green;
+        border-left:3px dashed blue;
+           }
+
+    /*Two things on this one: changing the font-weight to 900 (the heaviest / thickest weight possible), and using a "ridge" style border, which is kinda funky / ugly. */
+    .second {
+        font-weight:900;
+        border: 3px ridge grey;      
+            }
+
+    /*A reminder that background-color affects the whitespace, color affects the text (content). Also using font-weight 200, a smaller weight, here. */ 
+    .third {
+        background-color:purple;
+        color:coral;
+        border-left:8px solid blue;
+        font-weight:200;    
+            }
+
+
+        </style>
+</head>
+
+<body>
+    <h1>Important note on these solutions:</h1>
+    <p>As I'm sure you'll notice, we're putting our CSS in the "style" tag in the header, rather than in an external CSS file for these solutions. This is for your convenience, to keep all of the code for this relatively short example in one place.</p>
+    <p>If you wanted to link to an external stylesheet, you'd do it with the following tag in the header:</p>
+    <p style="font-family:Courier">&lt;link rel = "stylesheet"  href = "path-to-your-stylesheet">.</p>
+    <p>"path-to-your-stylesheet"</p>
+	<div class = "first">The first div.</div>
+    <div class = "second">The second div.</div>
+    <div class = "third">The third div!</div>
+
+	<script type="text/javascript" src=""></script>
+</body>
+
+</html>
