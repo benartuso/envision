@@ -58,9 +58,26 @@
 <body>
     <h1>Important note on these solutions:</h1>
     <p>As I'm sure you'll notice, we're putting our CSS in the "style" tag in the header, rather than in an external CSS file for these solutions. This is for your convenience, to keep all of the code for this relatively short example in one place.</p>
+    
     <p>If you wanted to link to an external stylesheet, you'd do it with the following tag in the header:</p>
     <p style="font-family:Courier">&lt;link rel = "stylesheet"  href = "path-to-your-stylesheet">.</p>
-    <p>"path-to-your-stylesheet"</p>
+    <p>The "path-to-your-stylesheet" is determined by <strong>what you named your CSS file</strong> as well as <strong>where you stored it.</strong></p>
+    <p>CSS files should always end with a .css file extension. If your file is named "border-styles.css" and is in the SAME FOLDER as your html document, your "path-to-your-stylesheet" would be "border-styles.css." If you made a special subfolder for your styles called "css-folder", and then put your file "border-styles.css" inside that folder, your "path-to-your-stylesheet" would be "css-folder/border-styles.css".</p>
+    
+    <p>So, with the following file and folder structure:</p>
+    <ul>
+        <li>
+            envision
+                <ul><li>week-1</li></ul>
+                <ul><li>week-2
+                    <ul><li>styles-folder
+                        <ul><li>border-styles.css</li></ul></li></ul>
+                    <ul><li>borders-solution.html</li></ul>
+                    </li></ul>
+        </li>
+        
+        </ul>
+    ...your "path-to-your-stylesheet" would be styles-folder/border-styles.css. Slack us if this doesn't make sense, we know it's tricky!
 	<div class = "first">The first div.</div>
     <div class = "second">The second div.</div>
     <div class = "third">The third div!</div>
