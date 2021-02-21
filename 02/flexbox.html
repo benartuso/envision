@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+	<meta charset="utf-8">
+	<title>Display and flexbox demo.</title>
+	<meta name="author" content="Your Name">
+	<meta name="description" content="Example description">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="">
+	<link rel="icon" type="image/x-icon" href=""/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;500;700&display=swap" rel="stylesheet">
+<style>
+    body {
+        font-family:"Inter";
+        font-weight:300;
+        margin-left:20px;
+    }
+    .your-turn {
+        font-size:20px;
+        margin:10px;
+        padding:10px;
+        border: 1px solid #0C79E5;
+        margin-top:40px;
+    }
+    
+    h2, h3, h4, h5, h6 {
+        margin-top:70px;
+    }
+    
+    .container {
+        background-color:bisque;
+        border:1px solid black;
+        margin:20px;
+        min-height:100px;
+    }
+    
+    .box {
+        background-color:aliceblue;
+        border: 1px solid black;
+        margin:10px;
+        padding:2px;
+        min-width:70px;
+    }
+    
+    .margin-box {
+        margin:15px;
+    }
+    
+    </style>
+    
+    </head>
+
+<body>
+	<h1>Normal flow</h1>
+    
+    <p>Normal flow is the default way that our browsers arrange content.</p>
+    
+    <p>As you can see, this happens more or less in order from top to bottom, and in the same order that elements are specified in our HTML markup.</p>
+    
+    <div>Text in this div is on top,</div>
+    <div>Text in this div is in the middle,</div>
+    <div>...and text in this div is on the bottom</div>
+    
+    <p>Because that's the order it's specified in our HTML.</p>
+    <h2>Inline vs. block elements</h2>
+    
+    <p>As we discussed last week, most elements have default displays of either <strong>inline</strong>, where the element sits next to other elements and doesn't take up an entire line, and <strong>block</strong>, where the element cannot be in line with other elements, as it takes up an entire line.</p>
+    
+    <p>This paragraph element is block—it starts a new line.</p>
+    
+    <span style="color:blue">This is one span</span> <span span style="color:purple">and this is another.</span> These are inline, as they are able to exist on the same line. 
+    
+    <p>Here's what's new this week: <strong>whether an element is block or inline is not a fixed, immutable property of that element type.</strong> It's a CSS property, called display, and can be changed like any other CSS property!</p>
+    
+    <h3>Messing with elements' display property:</h3>
+    
+    <p>We've established that paragraphs have block display. All we really mean here is that they have block display by <strong>default.</strong>
+    </p>
+    
+    <p style="display:inline; color:blue">This blue paragraph has its display changed, <strong>via CSS, to inline.</strong>
+    </p>
+    
+    <p style = "display:inline; color:red">This red paragraph also has its display changed to inline. </p>
+    
+    <p>Notice that these paragraphs are now able to coexist on the same line, and behave exactly like inline elements! Similarly...
+    </p>
+    
+    <p>The <strong>strong</strong> property is usually inline. I use it for convenient bolding all the time, especially when writing these tutorials. However, if we change <strong style = "display:block">this particular strong's</strong> display property to 'block' through CSS, it (quite oddly) takes up its own line. Probably better to leave that one as its default, inline!</p>
+    
+    <p class = "your-turn"><strong>Your turn:</strong>
+    below is the HTML element for an unordered list (ul). This is composed through nesting list item (li) bullet points elements inside a ul element (ordered list) <br/><br/>
+    By default, they list items display below one each other, as you'd expect. Use CSS to coerce them to display side by side! You can use inline style, the style tag in this doc's header, or your own external stylesheet!
+        
+    </p>
+        <!-- Your turn!-->
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    
+<h2>Flexbox!</h2>
+    <p>Positioning things in documents, using only the above display properties and the occasional exact, pixel-level specification of where something should go, was a huge pain. </p>
+    <p>So, an additional display method was developed, called the <strong>CSS flexible box model</strong>, or <strong>Flexbox.</strong></p>
+    
+    <p>Flexbox helps with the arrangment of multiple items (divs, paragraphs, images, text, etc.) within a container (usually a div).</p>
+    
+    <h3>Arrangement in a container, without flexbox</h3>
+    Here's what putting three divs inside a parent div looks like under normal flow (without flexbox). 
+    
+    <p>Outer div in orange, inner divs are in blue!</p>
+    
+    <div class = "container">
+    
+        <div class = "box">Inner div</div>
+        <div class = "box">Inner div 2</div>
+        <div class = "box">Inner div 3</div>
+    </div>
+    
+    <p>You can see that the divs flow from top to bottom, as we talked about in the top section (Normal flow). This would certainly be fine for some applications (boring web pages, especially) but really limits the ways in which we can design and lay out our pages (and eventually, our visualizations). </p>
+    
+    <h3>Arrangement in a container, WITH flexbox</h3>
+     
+    <p>We showed two different values of the "display" css property: "inline" and "block". Flexbox uses a third, "flex"—and a flexbox container is created through placing "display:flex" property on the OUTER (container / parent) div. Let's do this below.</p>
+    
+
+    <div style = "display:flex" class = "container">
+    
+        <div class = "box">Inner div</div>
+        <div class = "box">Inner div 2</div>
+        <div class = "box">Inner div 3</div>
+    
+    </div>
+    
+    <p>What changed? The most noticeable difference is that these div elements now look much more similar to "inline" style. Each div is exactly the width of the text inside it, and they flow from left to right (instead of top to bottom, now) in the order they were specified. </p>
+    
+    <p>So...why not just use display:inline, then?</p>
+    <p>The answer is that <strong>Flexbox gives us MUCH more control over how to arrange these elements within the div.</strong></p>
+    
+    <div style = "display:flex" class = "container">
+    
+        <div class = "box">Inner div 1</div>
+        <div class = "box">Inner div 2</div>
+        <div class = "box">Inner div 3</div>
+    
+    </div>
+    
+    <h3>Switching the flex-direction to determine layout flow</h3>
+    <p>The default value of Flexbox's <strong>flex-direction</strong> CSS property is "row", which arranges the divs in a row, as we just saw. We can also change it to "column" for a vertical layout style.</p>
+    
+    <p><strong>flex-direction: column,</strong> similar to original block display.</p>
+    <div style = "display:flex; flex-direction:column;" class = "container">
+    
+        <div class = "box">Inner div 1</div>
+        <div class = "box">Inner div 2</div>
+        <div class = "box">Inner div 3</div>
+    
+    </div>
+    
+      <p><strong>flex-direction: column-reverse,</strong> to switch the order of things around.</p>
+    <div style = "display:flex; flex-direction:column-reverse;" class = "container">
+    
+        <div class = "box">Inner div 1</div>
+        <div class = "box">Inner div 2</div>
+        <div class = "box">Inner div 3</div>
+    
+    </div>
+    
+      <p><strong>flex-direction: row-reverse,</strong> to switch the order of things around.</p>
+    <div style = "display:flex; flex-direction:row-reverse;" class = "container">
+    
+        <div class = "box">Inner div 1</div>
+        <div class = "box">Inner div 2</div>
+        <div class = "box">Inner div 3</div>
+    
+    </div>
+    
+    <p>Notice that with "reverse," the items build from the right (if row) or bottom (if column) of the container instead of the left and top. This is especially useful for things like <strong>menu buttons on a personal website</strong> or visualization page, which will often concentrate in the top right.</p>
+
+    <h3>Flex wrap: what if we have too many things to fit in one div?</h3>
+    
+    <p>With default flexbox properties, as you crowd more and more elements into the div, they will squish as far as they possibly can, then eventually overflow the div, leading to a really ugly look and a <strong>loss of important content.</strong></p>
+    <strong>There are 15 divs here, but depending on your screen size, a lot of them probably don't show up. Bad!</strong>
+    <div style = "display:flex; " class = "container">
+    
+        <div class = "box">Inner div 1</div>
+        <div class = "box">Inner div 2</div>
+        <div class = "box">Inner div 3</div>
+        <div class = "box">Inner div 4</div>
+        <div class = "box">Inner div 5</div>
+        <div class = "box">Inner div 6</div>
+        <div class = "box">Inner div 7</div>
+        <div class = "box">Inner div 8</div>
+        <div class = "box">Inner div 9</div>
+        <div class = "box">Inner div 10</div>
+        <div class = "box">Inner div 11</div>
+        <div class = "box">Inner div 12</div>
+        <div class = "box">Inner div 13</div>
+        <div class = "box">Inner div 14</div>
+        <div class = "box">Inner div 15</div>
+    
+    </div>
+    
+    <p>By adding in the <strong>flex-wrap:wrap</strong> property,</p>
+    
+</body>
+
+</html>
