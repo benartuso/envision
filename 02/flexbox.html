@@ -36,16 +36,50 @@
         min-height:100px;
     }
     
+    .inner-box {
+        margin-bottom:20px;
+        margin-top:10px;
+        margin-left:20px;
+        margin-right:20px
+    }
+    
     .box {
         background-color:aliceblue;
         border: 1px solid black;
         margin:10px;
         padding:2px;
-        min-width:70px;
+        min-width:100px;
     }
     
     .margin-box {
         margin:15px;
+    }
+    
+    .menu {
+
+    }
+    
+    .logo {
+
+    }
+    
+    .footer {
+        border:1px solid black;
+    }
+    
+    .link {
+        margin-left:5px;
+        border: 1px solid grey;
+        padding:5px;
+        border-radius:15px;
+    }
+    
+    .logo {
+        
+    }
+
+    .link {
+        
     }
     
     </style>
@@ -53,7 +87,19 @@
     </head>
 
 <body>
-	<h1>Normal flow</h1>
+    <h1>Intro to CSS layout and Flexbox</h1>
+    <p>Hello Envision! This document is best viewed <strong>alongside its accompanying HTML in side-by-side windows.</strong> Brackets makes this super easy to do, and it allows you to interact with the page and change properties yourself to see how things react!</p>
+    <strong>Two big caveats on our use of CSS here:</strong>
+    <ul>
+        <li>For adding in the layout styles we're discussing in this document, we're using <strong>inline style.</strong> This is where style is added directly to an element via the attribute style="property:value; property:value" etc. directly in the opening HTML tag. <strong>This is purely to make it easier for you to follow along, and is for demonstration purposes. You should never do this when writing real HTML+CSS!</strong> The best practice is to link in an external CSS sheet, which will allow you to keep your content and style separate.</li>
+        <li>Another "do as we say, not as we do" moment: in addition to those styles added in-line, we also have some additional styles in a style tag in the document header. You don't need to pay super close attention to these, because they're mostly cosmetic (adding margins, etc.) to make the document easier to read overall. We mention this here for two reasons:
+            <ul>
+                <li>In practice, don't do this! Use an external stylesheet, instead.</li>
+                <li>If you try to recreate some of the examples and they don't look EXACTLY the same, check what styles we're applying! It's nothing critical, but makes a bit of cosmetic difference.</li></ul></li>
+    </ul>
+    
+    Alright—have fun digging into CSS layout!
+	<h2>Normal flow</h2>
     
     <p>Normal flow is the default way that our browsers arrange content.</p>
     
@@ -204,7 +250,221 @@
     
     </div>
     
-    <p>By adding in the <strong>flex-wrap:wrap</strong> property,</p>
+    <p>By adding in the <strong>flex-wrap:wrap</strong> property, we can cause the excess content to overflow down onto a new line in the div, preventing the loss of content!</p>
+    
+        <div style = "display:flex; flex-wrap:wrap;" class = "container">
+    
+        <div class = "box">Inner div 1</div>
+        <div class = "box">Inner div 2</div>
+        <div class = "box">Inner div 3</div>
+        <div class = "box">Inner div 4</div>
+        <div class = "box">Inner div 5</div>
+        <div class = "box">Inner div 6</div>
+        <div class = "box">Inner div 7</div>
+        <div class = "box">Inner div 8</div>
+        <div class = "box">Inner div 9</div>
+        <div class = "box">Inner div 10</div>
+        <div class = "box">Inner div 11</div>
+        <div class = "box">Inner div 12</div>
+        <div class = "box">Inner div 13</div>
+        <div class = "box">Inner div 14</div>
+        <div class = "box">Inner div 15</div>
+    
+    </div>
+    
+    
+    <h3>Arranging content within flexboxes on the PRIMARY AXIS and the justify-content property</h3>
+    <p>We won't always want our flex items to just stack in from the left, right, top, or bottom. The justify-content property gives us some control over this: I'll show the 5 different values of it below on the three-div example.</p>
+    
+    <h4>flex-start: (we're used to this one!)</h4>
+       <div style = "display:flex; justify-content:flex-start;" class = "container">
+    
+        <div class = "box">Inner div 1</div>
+        <div class = "box">Inner div 2</div>
+        <div class = "box">Inner div 3</div>
+    
+    </div>
+    
+      <h4>flex-end: compressing to the other side</h4>
+       <div style = "display:flex; justify-content:flex-end;" class = "container">
+    
+        <div class = "box">Inner div 1</div>
+        <div class = "box">Inner div 2</div>
+        <div class = "box">Inner div 3</div>
+    
+    </div>
+    
+          <h4>center: aligning things together, emanating out from the center line of container div</h4>
+       <div style = "display:flex; justify-content:center;" class = "container">
+    
+        <div class = "box">Inner div 1</div>
+        <div class = "box">Inner div 2</div>
+        <div class = "box">Inner div 3</div>
+    
+    </div>
+    
+    <h4>space-between: no space on the outsides, but equal space BETWEEN items</h4>
+       <div style = "display:flex; justify-content:space-between;" class = "container">
+    
+        <div class = "box">Inner div 1</div>
+        <div class = "box">Inner div 2</div>
+        <div class = "box">Inner div 3</div>
+    
+    </div>
+    
+      <h4>space-around: equals space on outsides AND between items</h4>
+       <div style = "display:flex; justify-content:space-around;" class = "container">
+    
+        <div class = "box">Inner div 1</div>
+        <div class = "box">Inner div 2</div>
+        <div class = "box">Inner div 3</div>
+    
+    </div>
+    
+    <p>As we just saw, justify-content is used to align items around the MAIN FLEX AXIS. By default, that is the "row", as we discussed earlier, so our main flex axis goes across the div from left to right. If our flex direction was "column," these properties would do the same thing on the vertical axis instead!</p>
+    
+    <h3>Arranging content on the SECONDARY FLEX AXIS with align-items</h3>
+    
+    <p>By default, our inner divs "stretch" to take up the whole height of the container. There is a bit of space between the top of the inner divs and the edges of the outer divs, but that's only because we put in a slight "margin" property to make things look a bit clearer.</p>
+    
+    <p> If we change this property to another align-items value, our inner divs will only be as tall as they need to be to display their content, and we can then align them wherever we want vertically. </p>
+    
+    <h4>flex-start: At the start of the secondary flex axis (here, the top!)</h4>
+    
+          <h4>space-around: equals space on outsides AND between items</h4>
+       <div style = "display:flex; align-items:flex-start;" class = "container">
+    
+        <div class = "box">Inner div 1</div>
+        <div class = "box">Inner div 2</div>
+        <div class = "box">Inner div 3</div>
+    
+    </div>
+    
+       <h4>flex-end: At the end of the secondary flex axis (here, the bopttom!)</h4>
+    
+    
+       <div style = "display:flex; align-items:flex-end;" class = "container">
+    
+        <div class = "box">Inner div 1</div>
+        <div class = "box">Inner div 2</div>
+        <div class = "box">Inner div 3</div>
+    
+    </div>
+    
+           <h4>center: behaves as expected</h4>
+    
+    
+       <div style = "display:flex; align-items:center;" class = "container">
+    
+        <div class = "box">Inner div 1</div>
+        <div class = "box">Inner div 2</div>
+        <div class = "box">Inner div 3</div>
+    
+    </div>
+    
+    <h3>Importantly, we can (and will!) use both the justify-content and align-items properties together, to align along the two axes.
+    </h3>
+            
+    
+    <h4>Combining space-around on the primary (horizontal) axis with flex-end on the secondary (vertical) axis.</h4>
+
+    
+       <div style = "display:flex; align-items:flex-end; justify-content:space-around;" class = "container">
+    
+        <div class = "box">Inner div 1</div>
+        <div class = "box">Inner div 2</div>
+        <div class = "box">Inner div 3</div>
+    
+    </div>
+    
+    
+    <h2>Changing properties of individual items</h2>
+    
+    <p>We'd be quite limited if all of our flex children needed to take up the same amount of space, as they have in the examples we've discussed so far. </p>
+    <p>Thankfully, the flex-grow property allows us to specify the <strong>relative sizes</strong> of the items inside of a flex container.</p>
+    
+    <p>In contrast to all of the other styles, which have (so far) been applied to the PARENT (flex container), these are applied to the CHILDREN (flex items) inside the parent container, since each will have a different flex-grow factor.</p>
+    
+     <div style = "display:flex; align-items:flex-end; justify-content:space-around;" class = "container">
+    
+      
+        <div class = "box" style="flex-grow:2">Flex grow of 2</div>
+        <div class = "box" style="flex-grow:1">Flex grow of 1</div>
+         <div class = "box" style="flex-grow:1">Flex grow of 1</div>
+    
+    </div>
+    
+    <p class = "your-turn"><strong>Try it out:</strong> in the above, try out some different values of flex-grow on each of the elements, and see how they change! The sizes are determined by ratios, so 4-2-2 or 8-4-4 will be the same as the 2-1-1 listed above.</p>
+    
+    <h2>Flex containers in flex containers</h2>
+    The most powerful aspect of flex containers is that you can have flex containers INSIDE other flex containers, being displayed according to flex rules! 
+    <p>This allows you the pretty limitless flexibility you need to create a well-laid out website. Check this out: (<strong>strongly recommend </strong>looking at the comments in the HTML for the full picture!)</p>
+    
+    <!--The whole, parent div that will contain the larger layout.-->
+    <!--Notice that we're using COLUMN flex-direction instead of the default ROW-->
+    
+    <div class = "outer-box" id="whole-parent:" style="display:flex; flex-direction:column; background-color:#f2ceff">
+        <!--Then, three child flex containers of that parent div - BUT, these divs have are flex containers too! They have BOTH children AND parents, as a lot of people do.-->
+        <div class="inner-box" style="display:flex; justify-content:space-between;">
+            <!--These are arranged in the default flex-direction:row-->
+            <div class = "menu" style="flex-grow:1">Menu icon</div>
+            <div class = "logo" style="flex-grow:1">Logo</div>
+            <div class = "link" style="flex-grow:0">Home</div>
+            <div class = "link" style="flex-grow:0">About us</div>
+            <div class = "link" style="flex-grow:0">Sales</div>
+            <div class = "link" style="flex-grow:0">Contact us</div>
+        </div>
+        <div class="inner-box" style="display:flex; justify-content:space-between;height: 200px;">
+            <div style="flex-grow:5; flex-wrap:wrap; border:1px solid black;">
+                Content takes up 3/5 of page
+            </div>
+            <div style = "flex-grow:3; border:1px solid black;">
+                Photo takes up 2/5 of page
+
+            </div>
+    
+        </div>
+        <div class="inner-box" style="display:flex; justify-content:space-between;">
+        <div class = "footer" style="flex-grow:1;">Footer item 1</div>
+        <div class = "footer" style="flex-grow:1">Footer item 2</div>
+        <div class = "footer" style="flex-grow:1">Footer item 3.</div>
+        
+        </div>
+    </div>
+    
+    <h3>Here's what the above code would've looked like without any flexbox.</h3>
+    
+        <div class = "outer-box" id="whole-parent:" style="background-color:#f2ceff">
+        <!--Then, three child flex containers of that parent div - BUT, these divs have are flex containers too! They have BOTH children AND parents, as a lot of people do.-->
+        <div class="inner-box">
+            <!--These are arranged in the default flex-direction:row-->
+            <div class = "menu">Menu icon</div>
+            <div class = "logo">Logo</div>
+            <div class = "link">Home</div>
+            <div class = "link">About us</div>
+            <div class = "link">Sales</div>
+            <div class = "link">Contact us</div>
+        </div>
+        <div class="inner-box" style="height: 200px;">
+            <div style="border:1px solid black;">
+                Content takes up 3/5 of page
+            </div>
+            <div style = "border:1px solid black;">
+                Photo takes up 2/5 of page
+
+            </div>
+    
+        </div>
+        <div class="inner-box" style=";">
+        <div class = "footer" style="flex-grow:1;">Footer item 1</div>
+        <div class = "footer" style="flex-grow:1">Footer item 2</div>
+        <div class = "footer" style="flex-grow:1">Footer item 3.</div>
+        
+        </div>
+    </div>
+    
+    <h2>Wrapping up...</h2>
+    <p>There's lots more to learn with flexbox, and this is really just scratching the surface. Next, we'll use an online tool to help you get a hang of some of these properties, and we'll be uploading some files during the week to talk about the sister properties to flex-grow, which are flex-shrink and flex-basis. Taken together, these will give you a ton of control over the layouts of your sites, and eventually, your visualizations!</p>
     
 </body>
 
