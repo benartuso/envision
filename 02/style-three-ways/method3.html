@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>External style</title>
+<!-- we use the link tag in the head to link in external CSS files. 
+The "rel" attribute should be set to "stylesheet" to specify the type of 
+file we're importing. 
+
+The href is the link to the file. In this case, we've named the file "styles.css" and since it's in the same folder as our HTML doc, we can just refer to it as such! -->
+
+<link rel = "stylesheet" href = "styles.css">
+
+</head>
+
+<body>
+
+    <h1>Style, three ways! </h1>
+    <h2>Method 3: External stylesheet</h2>
+    <h3>This separation of content from style is, for most reasonably-sized documents, the way to go.</h3>
+
+    
+    <p>This folder contains three copies of approximately the same HTML document.</p>
+    
+    <p>These documents will contain the same basic information, and will even be styled the same way with CSS, but will have those styles applied in three different ways to illustrate the different ways of applying CSS.
+    </p>
+    
+    <strong>In this file, </strong>
+    
+  So, let's get to it! The basic style rules to test out for this document:
+        <ul>
+            <li>The font of the entire body will be Helvetica, instead of the default Times New Roman.</li>
+            <li>Specific text elements can be decorated with colors, such as <span>purple</span>, <span>blue</span>, and <span>coral</span>. These elements will also be made slightly larger than the rest of the document and occupy a heavier text weight. </li>
+        </ul>
+    
+    <p>All paragraphs will be wrapped with a 2px solid blue border, with 5px padding on all sides. </p>
+    
+    <p>Some paragraphs, though, such as the next one, will instead have a 5px dashed green border, with 10px padding on all sides.</p>
+    
+    <p id="funky-paragraph">This is the paragraph that's unique and funky.</p>
+    
+    <p>Finally, the image below will be aligned to the center of the page and 50% opacity.</p>
+    <img src="https://miro.medium.com/fit/c/262/262/1*Wt5T5pvD2ZaPU_TpTNmBnw.jpeg" width = 400 height = 375/>
+</body>
+</html>

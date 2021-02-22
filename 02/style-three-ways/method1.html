@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Inline style </title>
+</head>
+
+<body style="font-family:Helvetica">
+
+    <h1>Style, three ways! </h1>
+    <h2>Method 1: Inline style</h2>
+    <h3>Not a best practice! A worst practice, tbh.</h3>
+    <p>(Specifically, the reason this is such a bummer is because it causes us to write a ton of redundant code that isn't easily changed. To change the styling of the paragraphs below, we'd have to write a billion individual lines of CSS, rather than using the power of selectors to change only one.)</p>
+    <p style="border:2px solid blue; padding:5px;">This folder contains three copies of approximately the same HTML document.</p>
+    
+    <p style="border:2px solid blue; padding:5px;">These documents will contain the same basic information, and will even be styled the same way with CSS, but will have those styles applied in three different ways to illustrate the different ways of applying CSS.
+    </p>
+    
+  So, let's get to it! The basic style rules to test out for this document:
+        <ul>
+            <!--This method is NOT a best practice. Notice how much duplication of work we're doing!-->
+            <li>The font of the entire body will be Helvetica, instead of the default Times New Roman.</li>
+            <li>Specific text elements can be decorated with colors, such as <span style="color:purple; 
+                            font-size:32px; 
+                            font-weight:800;">purple</span>, 
+                <span style="color:blue;
+                             font-size:32px;
+                             font-weight:800;">blue</span>, and 
+                <span style="color:coral;
+                             font-size:32px;
+                             font-weight:800;">coral</span>.
+                
+            These elements will also be made slightly larger than the rest of the document and occupy a heavier text weight. </li>
+        </ul>
+    
+    <p style = "border:2px solid blue; padding:5px;">All paragraphs will be wrapped with a 2px solid blue border, with 5px padding on all sides. </p>
+    
+    <p style="border:2px solid blue; padding:5px;">Some paragraphs, though, such as the next one, will instead have a 5px dashed green border, with 10px padding on all sides.</p>
+    
+    <p style="border:5px dashed green; padding:10px;">This is the paragraph that's unique and funky.</p>
+    
+    <p style="border:2px solid blue; padding:5px;">Finally, the image below will have 25% left margin, and 50% opacity.</p>
+    
+    <!-- This image has many attributes already!
+        It doesn't matter, though—we can just add on style as another one.-->
+    <img src="https://miro.medium.com/fit/c/262/262/1*Wt5T5pvD2ZaPU_TpTNmBnw.jpeg" width = 400 height = 375
+    style = "margin-left:25%;
+             opacity:50%"  />
+</body>
+</html>

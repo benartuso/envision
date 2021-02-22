@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Inline style </title>
+
+<!-- We can create a "style" tag within the header, which allows us to write CSS directly inside our HTML document. Styles written here are then applied down below! --> 
+
+<style>
+    /*This is how CSS comments work!*/
+    
+    /* First, the easy stuff. Changing the font for the whole body: */
+    body { 
+        font-family:Helvetica;
+    }
+    
+    /*Let's add some classes to all of the "span" elements for easier styling. See the classes we added down below to do this. */
+    
+    /* Styling all the spans for larger text and emphasis. Remember, we use "." then the class name to select for class. */
+    .emph {
+        font-size:32px;
+        font-weight:800; 
+        /*Notice the convenience - we can change all at once!*/
+    }
+    
+    /*Now, we'll handle the individual colors. Easy enough! */
+    .purple { 
+        color:purple;
+    }
+    
+    .blue {
+        color:blue;
+    }
+    
+    .coral {
+        color:coral;
+    }
+    
+    /*This will save us a ton of time in applying the styles to all of the emphasis spans, while still allowing us freedom to color them differently. Noticed that we typed the lines 'font-size:32px; font-weight:800' just ONCE here instead of THREE times. 
+    
+    This would be even more important if you had 20 of these elements, instead of 3!*/
+    
+    /*Similarly, we can grab all the paragraphs in one go, by using the ELEMENT-level selector.*/
+    
+    p {
+        border: 2px solid blue;
+        padding: 5px;
+    }
+    
+    /* border: 2px solid blue IS EQUIVALENT to:
+        
+        border-width: 2px;
+        border-style: solid;
+        border-color: blue;
+    
+    Also, border: 2px solid blue IS EQUIVALENT TO:
+        border-top: 2px solid blue;
+        border-bottom: 2px solid blue;
+        border-left: 2px solid blue;
+        border-right: 2px solid blue;
+    */
+    
+    /*Let's style that unique paragraph with an id, since there's only one of it. We'll add the id directly into the HTML element below.*/
+    
+    /*Now use the #id selector!*/
+    #funky-paragraph {
+        border: 5px dashed green;
+        padding:10px;
+    }
+    
+    /* Notice that even though we have two separate rules applied to the funky paragraph, CSS is able to determine that the one applied on its id is more important, and the one we actually want to display. 
+    
+    More on this later—the term for it is "selector precedence," but the most important part to know for now is the general rule that IDs get precedence over CLASSES, and CLASSES get precedence over ELEMENT selectors. 
+    
+    If you applied three styles, one selecting by p { ... }, one by .a-class { ... }, and one by #an-id { ... }, the ones applied via id would overrule those applied by element or class.
+    
+</style>
+    
+</head>
+
+<body>
+
+    <h1>Style, three ways! </h1>
+    <h2>Method 2: Style in document header</h2>
+    
+    <p>This folder contains three copies of approximately the same HTML document.</p>
+    
+    <p>These documents will contain the same basic information, and will even be styled the same way with CSS, but will have those styles applied in three different ways to illustrate the different ways of applying CSS.
+    </p>
+    
+  So, let's get to it! The basic style rules to test out for this document:
+        <ul>
+            <li>The font of the entire body will be Helvetica, instead of the default Times New Roman.</li>
+            <li>Specific text elements can be decorated with colors, such as 
+                <!--Applying 2 classes to each span. One for the properties which are the same for all spans, and one specific to that color. See above!-->
+                <span class = "emph purple">purple</span>, 
+                <span class = "emph blue">blue</span>, and 
+                <span class = "emph coral">coral</span>. 
+                
+                These elements will also be made slightly larger than the rest of the document and occupy a heavier text weight. </li>
+        </ul>
+    
+    <p>All paragraphs will be wrapped with a 2px solid blue border, with 5px padding on all sides. </p>
+    
+    <p>Some paragraphs, though, such as the next one, will instead have a 5px dashed green border, with 10px padding on all sides.</p>
+    
+    <p id = "funky-paragraph">This is the paragraph that's unique and funky.</p>
+    
+    <p>Finally, the image below will be aligned to the center of the page and 50% opacity.</p>
+    <img src="https://miro.medium.com/fit/c/262/262/1*Wt5T5pvD2ZaPU_TpTNmBnw.jpeg" width = 400 height = 375/>
+</body>
+</html>
