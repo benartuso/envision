@@ -1,0 +1,28 @@
+/*Use a class selector to style the two outside divs with a plain border*/
+ .simple {
+        border: 1px solid black;
+    }
+
+
+#this-div {
+/*Styles for the id we gave the middle div, starting with 
+    the margin for each side. 
+    
+    Remember that margin is the space between the border and other elements!
+    */
+            margin-top:20px;
+            margin-left:80px;
+            margin-right:0px;
+            margin-bottom:50px;
+            
+    /*    Setting a border through the three-property shortcut we discussed in class */
+            border: 6px solid purple;
+
+    /*      And finally, setting the PADDING properties, which provides space between the content and the border.      */
+            padding-top:40px;
+            padding-bottom:70px;
+            padding-left:10px;
+            
+            
+        }
+     
