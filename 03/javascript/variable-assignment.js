@@ -132,6 +132,40 @@ console.log('\nyourChanger after the second mutation:', yourChanger)
 
 
 
+/*------------4: UNDEFINED ----------
+
+So far, when we DECLARED a variable (through something like let thisVariable;
+we also INITIALIZED it, or gave it an initial value. (let thisVariable=5).
+
+You can also declare a variable WITHOUT initializing it.
+
+By default, it will be set to undefined.*/
+
+let notInitialized;
+console.log("Since this variable isn't initialized, it is: ", notInitialized);
+
+/*Undefined is one of seven primitive JavaScript data types that we'll discuss in the next section.
+
+Not initializing your variables can cause a lot of errors, because 'undefined' values don't play well with others!*/
+
+console.log("Trying to do math with non-initialized values gives us:", 2 + notInitialized);
+
+/*However, it isn't nearly as bad as trying to use a variable that HASN'T EVEN BEEN DECLARED! That will throw an error that will wreck our script.*/
 
 
 
+/*-------------4: YOUR TURN------------
+
+Try to console.log out a variable that you DIDN'T INITIALIZE OR DECLARE!
+
+Something like this:
+
+console.log(aTotallyFakeVariable);
+
+Notice the error message!
+*/
+
+//Your work here: 
+
+
+/*To avoid either of these scenarios - either accidentally injecting NaN values into your data manipulations, or accidentally killing your script with a variable you forgot to declare, make sure that you're DECLARING AND INITIALIZING ALL VALUES like we practiced doing in sections 1-3.*/
