@@ -116,11 +116,59 @@ Even if JavaScript reads in your values as the wrong type (usually string), ther
 
 let stringFour = '4';
 let stringFive = '5';
-console.log("Without parseInt, 4+5=", stringFour+ stringFive);
+console.log("\n\nWithout parseInt, 4+5=", stringFour+ stringFive);
 
 //NOw using the parseInt method: 
 console.log("With parseInt, 4+5=", parseInt(stringFour) + parseInt(stringFive));
 
 //A nice, quicker way to do this is by sticking a '+' in front of a string that you'd like to parse to a number:
 console.log("Same thing, different syntax: 4+5=", +stringFour + +stringFive);
+
+//Unfortunately, there is a slight difference in this case between float and int. Use parseFloat for decimals, parseInt for integers. 
+console.log("Parsing 1.6 as an int rounds DOWN:", parseInt(1.6));
+console.log("Parsing 1.6 as a float works fine:", parseFloat(1.6));
+
+
+//And, you can use parseString to head back in the other direction!
+let numberTen=10;
+let numberFour=4;
+
+
+
+console.log("\n\nThe numbers 10 + 4 (using String()) =:", numberTen+ numberFour);
+console.log("The strings 10+4, put next to each other, =:", String(numberTen) + String(numberFour));
+
+
+//Be careful about Booleans! See below:
+console.log("\n\nBoolean() works great, where 0 is converted to false:", Boolean(0));
+console.log("...and any other number is converted to true", Boolean(-1), Boolean(1234.5));
+
+//BUT: Any non-empty string variable also coerces to true! 
+console.log("\n\nCoercing 'true' to boolean yields ", Boolean("true"));
+console.log("...but coercing 'false' to boolean yields ", Boolean("false"));
+
+
+/* ----------------3: YOUR TURN!--------------
+Produce the following results using no literals, only the variables provided! No typing true, or "a string", or 3, etc., at any point!
+*/
+
+let floatTwoPointSeven = 2.7;
+let numberZero= 0;
+let theNumberFour = 4;
+let boolTrue = true;
+
+//6.7
+
+//2 (using floatTwoPointSeven)
+
+//false
+
+//"falsefalse" 
+
+//3.7
+
+
+
+
+
 
