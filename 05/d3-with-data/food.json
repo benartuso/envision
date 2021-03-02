@@ -1,0 +1,5 @@
+{ //copy JUST THE ARRAY into our js file.
+    "bios":[
+        {"foodName":"grapefruit", "foodGroup":"fruit", "foodColor":"pink"},{"foodName":"orange", "foodGroup":"fruit", "foodColor":"orange"},{"foodName":"broccoli", "foodGroup":"vegetable", "foodColor":"green"},{"foodName":"bread", "foodGroup":"grain", "foodColor":"brown"},{"foodName":"cheese", "foodGroup":"dairy", "foodColor":"yellow"},{"foodName":"cream", "foodGroup":"dairy", "foodColor":"white"},
+    ]
+}
