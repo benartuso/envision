@@ -16,46 +16,59 @@ Let's see this in action below. */
 
 //----------1: ASSIGNING VARIABLES VIA LET--------------
 
-let ourFirstBoolean = false;
+//JavaScript is a dynamically typed language. We don't need to tell the interpreter that something is an int, a boolean, a string, a number, etc.
 
-//Log it to the console so we can see what's up!
-console.log(ourFirstBoolean);
+let ourFirstLet = "string";
+let ourSecondLet = false;
+let ourThirdLet = 4;
+let ourFourthLet = undefined;
+
+//These all work fine! No need to specify the type. 
+//Let's print them all to the console: 
+console.log(ourFirstLet, ourSecondLet, ourThirdLet, ourFourthLet);
 
 //From now on, so that you can easily keep track of this code as it runs, we'll add additional console.logs so that you can save your place. We hope this'll be more convenient than checking the line numbers! 
 
 
 //That'll go like this: (these little \n are for line breaks just to make it cleaner to read!)
-console.log("\n\nOur first descriptive message! Printing ourFirstBoolean below.", ourFirstBoolean);
+console.log("\n\nOur first descriptive message! Printing these four variables again.", ourFirstLet, ourSecondLet, ourThirdLet, ourFourthLet);
 
+//It's easy to change any of these variables! Just reassign it, using the equals sign. That'll look something like this: 
+console.log("\n\nFirst let before the change equals: ", ourFirstLet)
+ourFirstLet = "what's up?";
+console.log("\n\nFirst let after the change equals: ", ourFirstLet)
 
+//Changing it back, for the exercise later/
+ourFirstLet="string";
 
+//One thing to AVOID is trying to RE-DECLARE the variable!
+//We only use the let (or const, or var) keyword the FIRST time, when we're creating the variable originally. using it afterwards, like in the commented-out line below, wil throw an error. 
+
+/* DON'T DO THIS: 
+
+let initializationExample = "the first value"; // Works fine, initial assignment
+let initializationExample = "the second value"; //Crashes!
+
+"uncaught syntaxerror: identifier 'initializationExample' has already been declared."
 
 
 /*-------------1: YOUR TURN------------------------- 
-Since we declared using let, we can change the value of ourFirstBoolean any time we want. Change ourFirstBoolean to true, through assigning it like this!
-
-ourFirstBoolean = true;
-
-Then check the console output to see if it updated.
+Since we declared using let, we can change the value of any of these variables at any time we want. Change ourFirstLet, ourSecondLet, and ourThirdLet to be different values, but of the same data type! (don't worry about ourFourthLet, though.)
 ---------------------------------------------------*/
 
 //Put your work on the next line.
 
-console.log("\n\nourFirstBoolean should now print out as true below, not false!", ourFirstBoolean);
+
+//This statement will print out your updated values:
+console.log("\n\nThese three values should now print out completely differently than 'string' false 4, something should've changed in each!", ourFirstLet, ourSecondLet, ourThirdLet);
 
 
 
-/*Great work! Notice that when we change the variable's contents, we don't use the let keyword again, only the first time! Otherwise, it throws an error, see below!
+/*Great work! Notice that when we change the variable's contents, we don't use the let keyword again, only the first time! Otherwise, it throws an error. 
 
-UNCOMMENT the line below by deleting the slashes. Your whole file crashes, and the error "Identifier 'ourFirstBoolean' has already been declared' appears! re-comment that line once you're done so you can keep moving ahead.
-*/
+If you have time while others finish up, try it out for yourself and see how it crashes the script!*/
 
-//let ourFirstBoolean = false; 
-
-
-
-
-
+//Try initializing the same variable with let to two different values, and see all the bad things that happen below:
 
 
 
@@ -135,22 +148,61 @@ console.log('\nyourChanger after the second mutation:', yourChanger)
 /*------------4: UNDEFINED ----------
 
 So far, when we DECLARED a variable (through something like let thisVariable;
-we also INITIALIZED it, or gave it an initial value. (let thisVariable=5).
+we also INITIALIZED it, or gave it an initial value.
 
 You can also declare a variable WITHOUT initializing it.
 
 By default, it will be set to undefined.*/
 
+let initialized = 1357;
+console.log("Initialized variables have values of whatever they're assigned: ", initialized)
+
 let notInitialized;
-console.log("Since this variable isn't initialized, it is: ", notInitialized);
+console.log("Uninitialized variables have types of: ", notInitialized);
 
 /*Undefined is one of seven primitive JavaScript data types that we'll discuss in the next section.
 
 Not initializing your variables can cause a lot of errors, because 'undefined' values don't play well with others!*/
 
-console.log("Trying to do math with non-initialized values gives us:", 2 + notInitialized);
+let four;
 
-/*However, it isn't nearly as bad as trying to use a variable that HASN'T EVEN BEEN DECLARED! That will throw an error that will wreck our script.*/
+let eight = 2*four;
+
+console.log("Trying to do math with non-initialized values gives us: ", eight);
+
+//When really, this should've been done through giving the variable a VALUE of four, either initially or later on. 
+
+//TWO valid ways of doing this: 
+let realFour = 4;
+let realEight = 2*realFour;
+console.log("We can give four a value when we declare it: 2*4 = ", realEight);
+
+//Or, we can declare without initializing, then give it a value later. 
+//Declare
+let otherRealFour;
+//Give a value, changing from undefined to 4
+otherRealFour = 4;
+//Now do 8;
+let otherRealEight=2*otherRealFour;
+console.log("We can also declare without initializing, then give it a value later. 2*4 = ", otherRealEight);
+
+
+/*However, it isn't nearly as bad as trying to use a variable that HASN'T EVEN BEEN DECLARED! That will throw an error that will wreck our script.
+
+For instance: if you were to uncomment the following code:
+*/
+
+//console.log(aNonExistentVariable);
+
+//..the interpreter would throw an error message.
+
+//If intsead you did...
+let anExistentVariable; //Initialize to undefined
+//THEN:
+console.log(anExistentVariable);
+
+//...you'd be fine, as you are here.
+
 
 
 
@@ -163,6 +215,8 @@ Something like this:
 console.log(aTotallyFakeVariable);
 
 Notice the error message!
+
+THEN, make the error go away through adding a variable declaration ABOVE your console.log, like we just did in the demo.
 */
 
 //Your work here: 
