@@ -1,0 +1,29 @@
+
+h2 {
+    margin-top:40px;
+}
+
+.night-mode {
+    color:white;
+    background-color:black;
+}
+#c-button {
+    margin-top:20px;
+}
+
+#hover-on-me {
+    border: 1px solid black;
+    width:80%;
+    margin: 0 auto;
+    padding:30px;
+    
+    
+}
+
+#counter {
+    padding:10px;
+    margin:2px;
+    font-size:20px;
+    border:1px solid black;
+    
+}
