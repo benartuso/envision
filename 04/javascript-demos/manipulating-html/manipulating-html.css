@@ -1,0 +1,45 @@
+.funky-div {
+      height: 100px;
+      width: 500px;
+      animation: animationFrames 5s infinite;
+    }
+    
+    
+@keyframes animationFrames{
+      0% {
+        background-color: blue;
+      }
+      15% {
+        background-color: red;
+      }
+      30% {
+        background-color: orange;
+      }
+      45% {
+        background-color: purple;
+      }
+      60% {
+        background-color: green;
+      }
+      75% {
+       background-color: pink;
+      }
+      100% {
+        background-color: black;
+      }
+    }
+#hover-div {
+    height:100px;
+    border:1px solid black;
+    padding:20px;
+}
+
+#error-1 {
+    margin-top:30px;
+}
+
+.error-3 {
+    margin:10px;
+    border:1px solid blue;
+    padding:5px;
+}
