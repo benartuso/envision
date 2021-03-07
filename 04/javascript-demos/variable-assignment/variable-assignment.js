@@ -50,26 +50,7 @@ let initializationExample = "the first value"; // Works fine, initial assignment
 let initializationExample = "the second value"; //Crashes!
 
 "uncaught syntaxerror: identifier 'initializationExample' has already been declared."
-
-
-/*-------------1: YOUR TURN------------------------- 
-Since we declared using let, we can change the value of any of these variables at any time we want. Change ourFirstLet, ourSecondLet, and ourThirdLet to be different values, but of the same data type! (don't worry about ourFourthLet, though.)
----------------------------------------------------*/
-
-//Put your work on the next line.
-
-
-//This statement will print out your updated values:
-console.log("\n\nThese three values should now print out completely differently than 'string' false 4, something should've changed in each!", ourFirstLet, ourSecondLet, ourThirdLet);
-
-
-
-/*Great work! Notice that when we change the variable's contents, we don't use the let keyword again, only the first time! Otherwise, it throws an error. 
-
-If you have time while others finish up, try it out for yourself and see how it crashes the script!*/
-
-//Try initializing the same variable with let to two different values, and see all the bad things that happen below:
-
+*/
 
 
 
@@ -81,20 +62,11 @@ Remember: the const keyword is used to store values (of any type!) that will NEV
 const constantNumber = 1234;
 console.log("\n\nWe can log out constants just like let vars, see:", constantNumber);
 
-
-/*----------------------2: YOUR TURN-------------
-
-Try to reassign the constant to 4321, or any other number, on the line below. Notice the error message, and that this crashes your script again!
-
-MAKE SURE TO COMMENT OUT OR DELETE THE LINE WHEN YOU'RE DONE, SO THAT YOU CAN MOVE ON!
-*/
-
-console.log("\n\nYou should see 'Uncaught TypeError: Assignment to constant variable' below this console log!");
-
-//Put your work on the next line. Comment it out with '//' when you're done!
+//If we try to reassign the constant to something else, like "constantNumber=1357", JavaScript's interpreter will hate us and not run any other parts of our script that come after this line.
 
 
-
+//The commented line below will crash the script: 
+//constantNumber=12.25;
 
 
 
@@ -121,26 +93,10 @@ console.log("...or a Number...", changer)
 
 changer = {className:'envision', numberOfStudents:10, quality:100000,
           subject:'data visualization', awesome:true};
+
 console.log("or even an Object with lots of properties, which we'll learn about in a bit!", changer)
 
 
-
-
-/*--------------------3: YOUR TURN------------
-
-We'll initialize the variable yourChanger below, as a Number. Change it to two other types, and check that the change worked via the console logs! 
-*/
-
-let yourChanger = 5400;
-console.log('\n\nInitial value of yourChanger:', yourChanger);
-
-//Now change it for the first time...
-
-console.log('\nyourChanger after one mutation:', yourChanger);
-
-//And change it one more time!
-
-console.log('\nyourChanger after the second mutation:', yourChanger)
 
 
 
@@ -206,14 +162,68 @@ console.log(anExistentVariable);
 
 
 
-/*-------------4: YOUR TURN------------
+/*-------------YOUR TURN------------
 
+/*-------------PART 1: YOUR TURN------------------------- 
+Since we declared using let, we can change the value of any of these variables at any time we want. Change theFirstLet, theSecondLet, and theThirdLet to be different values, but of the same data type!
+---------------------------------------------------*/
+
+let theFirstLet = "string";
+let theSecondLet = false;
+let theThirdLet = 4;
+
+//Put your work below this line.
+
+
+//This statement will print out your updated values:
+console.log("\n\nThese three values should now print out completely differently than 'string' false 4, something should've changed in each!", theFirstLet, theSecondLet, theThirdLet);
+
+
+/*Great work! Notice that when we change the variable's contents, we don't use the let keyword again, only the first time! Otherwise, it throws an error. 
+
+If you have time while others finish up, try it out for yourself and see how it crashes the script!*/
+
+//Try initializing the same variable with let to two different values, and see all the bad things that happen below:
+
+
+/*----------------------2: YOUR TURN-------------
+
+Try to reassign the constant "yourTurnConstant" to 4321, or any other number, on the line below. Notice the error message, and that this crashes your script again!
+
+MAKE SURE TO COMMENT OUT OR DELETE THE LINE WHEN YOU'RE DONE, SO THAT YOU CAN MOVE ON!
+*/
+
+console.log("\n\nYou should see 'Uncaught TypeError: Assignment to constant variable' below this console log!");
+
+const yourTurnConstant = 1234;
+//Put your work on the next line. Comment it out with '//' when you're done so that the rest of your script works!
+
+
+
+/*--------------------3: YOUR TURN------------
+
+We'll initialize the variable yourChanger below, as a Number. Change it to two other types, and check that the change worked via the console logs! 
+*/
+
+let yourChanger = 5400;
+console.log('\n\nInitial value of yourChanger:', yourChanger);
+
+//Now change it for the first time...
+
+console.log('\nyourChanger after one mutation:', yourChanger);
+
+//And change it one more time!
+
+console.log('\nyourChanger after the second mutation:', yourChanger)
+
+
+
+/*------YOUR TURN, PART 4--------
 Try to console.log out a variable that you DIDN'T INITIALIZE OR DECLARE!
 
 Something like this:
 
 console.log(aTotallyFakeVariable);
-
 Notice the error message!
 
 THEN, make the error go away through adding a variable declaration ABOVE your console.log, like we just did in the demo.

@@ -1,28 +1,3 @@
-/*-----------0: YOUR TURN---------
-
-As a warmup, declare and console.log out a variable from four of the types we talked about
-in the slides. 
-
-If you're having trouble with declaring an undefined, remember how we did it in variable-assignment.js!
-
-*/
-
-let yourNumber; //Your work before the semicolon
-let yourBoolean; //Your work before the semicolon
-let yourString; //Your work before the semicolon
-let yourUndefined; //Your work (or lack thereof, iykyk) before the semicolon
-
-//Let's check to see if this worked! the "typeof" operator tells us what type each variable is.
-
-console.log("Type of yourNumber: ", typeof yourNumber);
-console.log("Type of yourBoolean: ", typeof yourBoolean);
-console.log("Type of yourString: ", typeof yourString);
-console.log("Type of yourUndefined: ", typeof yourUndefined);
-
-
-
-
-
 /*------------1: MATH WITH NUMBER VARIABLES-----------
 
 We can use all the mathematical operators you're familiar with (and maybe a few more!) to combine Number variables to produce new numbers as output*/
@@ -41,6 +16,7 @@ console.log("Finding remainders: The remainder when 42 is divided by 13 is =", f
 //Of course, we don't need to store them in variables at all to do this! We can just use the numbers themselves, called their "literal" values.
 console.log("\n\nPlain numbers (literals) work fine too! 42+6=", 42+6);
 
+//MATH library
 
 /*---------1: YOUR TURN---------
 
@@ -95,10 +71,10 @@ Use type coersion to your advantage to produce the following output without typi
 */
 
 //The number 0
-console.log(false+false) //Your code inside parentheses (hint: 1 false might not be enough!)
+console.log() //Your code inside parentheses (hint: 1 false might not be enough!)
 
 //The number 3
-console.log(true+true+true) // Your code inside parentheses
+console.log() // Your code inside parentheses
 
 //The string "Hellotruetrue",
 console.log() // Your code inside parentheses

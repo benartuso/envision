@@ -186,9 +186,7 @@ etc.
 */
 
 //Your part E code here
-for (i=0; i<peoplePets.length; i++) {
-    peoplePets[i]['totalPets'] = peoplePets[i].dogs + peoplePets[i].cats;
-}
+
 
 //Check to see that it worked: 
 console.log(peoplePets);

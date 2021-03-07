@@ -4,8 +4,8 @@ You can create and store objects in variables, just like any of the primitive va
 
 For objects, there are three main rules:
     1. The entire object is surrounded in {} braces
-    2. Properties and values are linked like property:"value" or property:0, property:false, etc.
-    3. Property-value pairs are separated with commas. (NOT semicolons, like CSS.)
+    2. Properties and values are linked like property:"value" or property:0, property:false, etc., and separated by commas.
+    3. If the values are strings, they need to be in quotes. Property names don't need to be, but they can be.
     
 */
 
@@ -115,7 +115,7 @@ console.log("Or both, with Object.entries()", Object.entries(bensDad));
 
 /*-----------3: YOUR TURN  -----------
 
-Using the object you've built, use accessors to console log out a coherent sentence about it! Like this:*/
+Using the object you've built, use accessors to console log out a coherent sentence about it! Try to reference some nested properties, too. Like this (nested properties not shown in this example):*/
 
 //My example:
 console.log("Ben's dad's name is " + bensDad.firstName + " and he was born in " + bensDad.birthYear + " in the state of " + bensDad.homeState);

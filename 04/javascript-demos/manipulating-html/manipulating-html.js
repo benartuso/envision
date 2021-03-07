@@ -20,6 +20,7 @@ console.log("Here's the h1 node: ", header);
 header.textContent = "Look, we've changed the header to something completely different";
 
 /*CHANGING STYLES: There are actually two ways of doing this! 
+
     - 1. We can add and remove styles directly on the element. In doing so, we access them through attributes like .style.backgroundColor, .style.paddingLeft, etc. — basically css properties, but switched from padding-left to paddingLeft
     
     - 2. We can add and remove classes with the ".classList" family of methods. There are four extremely helpful methods for this: 
