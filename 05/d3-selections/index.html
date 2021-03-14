@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+	<meta charset="utf-8">
+	<title>Selections with D3</title>
+	<meta name="author" content="Your Name">
+	<meta name="description" content="Example description">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="d3-selections.css">
+	<link rel="icon" type="image/x-icon" href=""/>
+</head>
+
+<body>
+    <h1>DOM manipulation with D3</h1>
+    <p>This should feel pretty similar to the DOM manipulation you just learned how to do in regular JavaScript. This is a good thing—learning it the more general way first will allow us to transfer skills into the D3 world quite easily!</p>
+    
+    <p>Here is another paragraph, for demonstration purposes.</p>
+    
+    <p class = "special-paragraph">And this one is a paragraph of class "special-paragraph"</p>
+    
+    <p class = "special-paragraph">This one has two classes! "special-paragraph" and "another-class". Notice how they're specified separated by a space: p class = "special-paragraph another-class"</p>
+    
+    <p id = "best-paragraph-ever">Finally, this one has the id "best-paragraph ever".</p>
+    
+    <div>Within this div, some text is <span>inside a span,</span> and other text is not. <span>This text</span> is inside a span, and the other text is not!</div>
+    <span>This is text in a span, but not in a div, so it shouldn't be selected by d3.selectAll("div span").</span>
+    <!--Truly could not be more important: INCLUDE THE D3 SCRIPT! --> 
+    
+    <div id = "add-class">This div has the id "add-class", and we will use D3 to add the class "purple-div" to it.</div>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+	<script type="text/javascript" src="d3-selections.js"></script>
+</body>
+
+</html>

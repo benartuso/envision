@@ -61,16 +61,14 @@ _exit (the exit selection)
 */
 
 //Select the enter selection, so that we can add paragraphs to it! 
-const enter = bound
-                .enter();
+const enter = bound.enter();
 console.log("After the enter selection:");
 console.log(enter);
 
 //You can see that we've isolated just our enter nodes. 
 
 //Now, for each enter node...append a paragraph! Note that we can append ANYTHING here
-const afterAppend = enter
-                        .append("p")
+const afterAppend = enter.append("p")
 console.log("After appending paragraphs to the enter selection:")
 console.log(afterAppend)
 
@@ -82,4 +80,42 @@ const addText = afterAppend
                     .text("Some text for each paragraph.")
 console.log(addText)
 
-//Without having to write code six times, we've managed to return one paragraph for each of our data items. We're starting to get somewhere...
+//Without having to write code six times, we've managed to return one paragraph for each of our data items. We're starting to get somewhere with this...
+
+//...but really, we'd like to be able to change the attributes of these items based on the DATA.
+
+//THIS IS WHERE THE MAGIC HAPPENS!! WOO
+
+/*Let's change the text of each to be the fruit's name. 
+
+When we write functions in d3, we can automatically pass in the parameter "d", which will return each individual data item - the data item that is BOUND to, or ASSOCIATED WITH, each paragraph that we're currently drawing to the string. 
+
+When we pass over that "d", we can then change style attributes according to our data's values, something like d.foodName.
+*/
+
+addText
+    .text((d) => d.foodName)
+
+//Whoa. Crazy. We can use multiple attributes of d, though!
+
+addText
+    .text((d) => d.foodName + " is a " + d.foodGroup)
+
+//We can also use it to change style items!
+
+addText
+    .style("color", (d) => d.foodColor)
+
+//For visibility...
+
+addText
+    .style("font-size", '20px')
+    .style("font-weight", "800")
+
+//Not just d, but i! There is an additional parameter that we can pass in any part of our d3 function calls, called (i).
+
+//This is the INDEX of the data, from 0 to data.length-1. 
+
+addText
+    .text((d,i) => "#" + i + ": " + d.foodName + " is a " + d.foodGroup)
+
