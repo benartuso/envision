@@ -28,16 +28,16 @@ const body = d3.select("body");
 it up piece by piece */
 
 //Start with selecting all paragraphs in the body. 
-const allParagraphs = body.selectAll("p");
+let allParagraphs = body.selectAll("p");
 console.log("Selecting all paragraphs: (empty, because no paragraphs!)");
 console.log(allParagraphs);
 
 //Check out the console - it's empty, as we'd expect. 
 
 //Now, we'll BIND IT TO THE DATA, our 6-item "food" array. 
-const bound = allParagraphs.data(food);
+allParagraphs = allParagraphs.data(food);
 console.log("After data binding:")
-console.log(bound);
+console.log(allParagraphs);
 
 /*What do we see here? 
 
@@ -60,17 +60,14 @@ _exit (the exit selection)
     
 */
 
-//Select the enter selection, so that we can add paragraphs to it! 
-const enter = bound.enter();
+//JOIN the selection with the data array. Since there are currently zero paragraphs, and we have 6 data items, we'll end up appending 6 new paragraphs.
+//For each enter node...append a paragraph! Note that we can append ANYTHING here
+const afterAppend = allParagraphs.join("p");
 console.log("After the enter selection:");
-console.log(enter);
+console.log(afterAppend);
 
-//You can see that we've isolated just our enter nodes. 
+//6 paragraphs!! woo!!
 
-//Now, for each enter node...append a paragraph! Note that we can append ANYTHING here
-const afterAppend = enter.append("p")
-console.log("After appending paragraphs to the enter selection:")
-console.log(afterAppend)
 
 //We still have a selection of items, but now, they're paragraphs! We just can't see them, because they currently have no content. 
 
