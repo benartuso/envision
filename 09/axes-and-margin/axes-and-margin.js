@@ -109,7 +109,7 @@ d3.csv('https://raw.githubusercontent.com/benartuso/nodef19/master/data/03-vis-a
 
     //1: define our margin object, with the margin for each side. Left and bottom will have larger margins here, as they're where the axes will live. 
 
-    const margin = {top:30, right:30, left:55, bottom:40}
+    const margin = {top:30, right:30, left:75, bottom:60}
 
     //2: Using the margin, determine the "inner width" and "inner height" of the chart by taking the OUTER dimension size and subtracting out the margins for that dimension. 
 
@@ -170,7 +170,24 @@ d3.csv('https://raw.githubusercontent.com/benartuso/nodef19/master/data/03-vis-a
     const y = inner.append("g").call(yAxisNew);
 
     //Going well! Just need to shift x down a bit.
-    x.attr("transform", "translate(0,"+innerHeight+")")
+    x.attr("transform", "translate(0,"+innerHeight+")");
+
+
+    const xLabel = inner.append("text")
+        .text("Proportion of men in major")
+        .style("text-anchor", "middle")
+        .attr("transform", `translate(${innerWidth/2}, ${innerHeight+margin.bottom/2})`)
+        .attr("dy", "1em")
+        .style("fill", "black")
+    const yLabel = inner.append("text")
+        .text("Median income (USD)")
+        .attr("transform", "rotate(-90) translate("+-innerHeight/2+"," + -margin.left+")")
+        .attr("dy", "1.1em")
+        .style("fill", "black")
+        .style("text-anchor", "middle")
+
+
+    console.log(yLabel)
 
     //And now we can plot just like before. As long as we keep appending to inner, these numbers will be accurate!
 
