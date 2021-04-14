@@ -96,5 +96,7 @@ d3.csv("population.csv").then((data) => {
         .attr("stroke-width", 1.5)
         //"d" determines everything, is made using our line generator
         .attr("d", line)
+
+    //Pretty boring dataset, but there ya go!
     
 })
